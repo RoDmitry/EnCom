@@ -7,7 +7,7 @@ The main goal was to remove extra characters, allow binary data, and speed up pa
 
 There is no need to escape characters in strings. And it's capable to work with binary data as is.
 
-Also if you use string or byte slice in your resulting structure, it will not be cloned (Zero-copy).
+Zero-copy for string or bytes.
 
 ## Examples
 ### EnCom
