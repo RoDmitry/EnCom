@@ -12,56 +12,100 @@ Zero-copy for string or bytes.
 ## Examples
 ### EnCom
 ```
-glossary{
-    GlossDiv{
-        GlossList{
-            GlossEntry{
-                Abbrev:13=ISO 8879:1986
-                Acronym:4=SGML
-                GlossDef{
-                    GlossSeeAlso{
-                        3=GML
-                        3=XML
-                    }
-                    para:72=A meta-markup language, used to create markup languages such as DocBook.
-                }
-                GlossSee:6=markup
-                GlossTerm:36=Standard Generalized Markup Language
-                ID:4=SGML
-                SortAs:4=SGML
+web-app{
+    servlet{
+        {
+            init-param{
+                adminGroupID:4
+                betaServer:1
+                dataLog:1
+                dataLogMaxSize:0=
+                fileTransferFolder:18=fileTransferFolder
+                log:1
             }
+            servlet-name:10=cofaxTools
         }
-        title:1=S
+        {
+            init-param{
+                cacheTemplatesStore:n
+                cacheTemplatesTrack:100
+                configGlossary:poweredBy:5=Cofax
+                dataStoreMaxConns:100
+                dataStoreName:5=cofax
+                maxUrlLength:500
+                templateOverridePath:0=
+                templatePath:9=templates
+                useDataStore:1
+                useJSP:0
+            }
+            servlet-class:24=org.cofax.cds.CDSServlet
+            servlet-name:8=cofaxCDS
+        }
+        {
+            init-param{
+                mailHost:5=mail1
+                mailHostOverride:5=mail2
+            }
+            servlet-name:10=cofaxEmail
+        }
     }
-    title:16=example glossary
+    servlet-mapping{
+        cofaxTools:8=/tools/*
+        fileServlet:9=/static/*
+    }
+    taglib{
+        taglib-location:23=/WEB-INF/tlds/cofax.tld
+    }
 }
 ```
 
 ### JSON
 ```
 {
-    "glossary": {
-        "GlossDiv": {
-            "GlossList": {
-                "GlossEntry": {
-                    "Abbrev": "ISO 8879:1986",
-                    "Acronym": "SGML",
-                    "GlossDef": {
-                        "GlossSeeAlso": [
-                            "GML",
-                            "XML"
-                        ],
-                        "para": "A meta-markup language, used to create markup languages such as DocBook."
-                    },
-                    "GlossSee": "markup",
-                    "GlossTerm": "Standard Generalized Markup Language",
-                    "ID": "SGML",
-                    "SortAs": "SGML"
-                }
+    "web-app": {
+        "servlet": [
+            {
+                "init-param": {
+                    "adminGroupID": 4,
+                    "betaServer": true,
+                    "dataLog": 1,
+                    "dataLogMaxSize": "",
+                    "fileTransferFolder": "fileTransferFolder",
+                    "log": 1
+                },
+                "servlet-name": "cofaxTools"
             },
-            "title": "S"
+            {
+                "init-param": {
+                    "cacheTemplatesStore": null,
+                    "cacheTemplatesTrack": 100,
+                    "configGlossary:poweredBy": "Cofax",
+                    "dataStoreMaxConns": 100,
+                    "dataStoreName": "cofax",
+                    "maxUrlLength": 500,
+                    "templateOverridePath": "",
+                    "templatePath": "templates",
+                    "useDataStore": true,
+                    "useJSP": false
+                },
+                "servlet-class": "org.cofax.cds.CDSServlet",
+                "servlet-name": "cofaxCDS"
+            },
+            {
+                "init-param": {
+                    "mailHost": "mail1",
+                    "mailHostOverride": "mail2"
+                },
+                "servlet-name": "cofaxEmail"
+            },
+        ],
+        "servlet-mapping": {
+            "cofaxTools": "/tools/*",
+            "fileServlet": "/static/*"
         },
-        "title": "example glossary"
+        "taglib": {
+            "taglib-location": "/WEB-INF/tlds/cofax.tld"
+        }
     }
 }
 ```
