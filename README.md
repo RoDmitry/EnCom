@@ -7,7 +7,7 @@ The main goal was to remove extra characters, allow binary data, and speed up pa
 
 There is no need to escape characters in strings. And it's capable to work with binary data as is.
 
-Zero-copy for string or bytes.
+Zero-copy for strings and bytes.
 
 To make it even more compact, I encourage you to use keys as short as possible, one char is ideal as 0-9,a-z,A-Z. And if you have removed some value, then just don't use that key anymore (maybe mark it as deprecated somewhere). I guess you ask: "Should I remember the alphabet to name it?", and the solution might be to name it as: `0-9` then `qwertyuiopasdf..`, so no need to remember the alphabet.
 
