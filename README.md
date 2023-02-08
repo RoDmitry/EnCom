@@ -29,7 +29,7 @@ web-app{
             init-param{
                 cacheTemplatesStore:n
                 cacheTemplatesTrack:100
-                configGlossary:poweredBy:5=Cofax
+                configGlossary_poweredBy:5=Cofax
                 dataStoreMaxConns:100
                 dataStoreName:5=cofax
                 maxUrlLength:500
@@ -79,7 +79,7 @@ web-app{
                 "init-param": {
                     "cacheTemplatesStore": null,
                     "cacheTemplatesTrack": 100,
-                    "configGlossary:poweredBy": "Cofax",
+                    "configGlossary_poweredBy": "Cofax",
                     "dataStoreMaxConns": 100,
                     "dataStoreName": "cofax",
                     "maxUrlLength": 500,
