@@ -117,7 +117,7 @@ Separator - b' ', b'\n', b'\t', b'\r' (or actually it might be any character <= 
 
 Structure and array open with `{` and close with `}`
 
-First structure/array don't have them, and if you don't specify the structure, and it's not a map (structure), then it will always be an array
+First structure/array don't have them, and if you didn't specify the structure (the layout), and it's not a map (structure), then it will always be an array
 
 If you have an Array of Enums, then Enums inside don't have `{` and `}`
 
