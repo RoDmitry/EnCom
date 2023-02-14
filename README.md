@@ -19,7 +19,7 @@ web-app{
         {
             init-param{
                 adminGroupID:4
-                betaServer:1
+                betaServer:t
                 dataLog:1
                 dataLogMaxSize:0=
                 fileTransferFolder:18=fileTransferFolder
@@ -37,8 +37,8 @@ web-app{
                 maxUrlLength:500
                 templateOverridePath:0=
                 templatePath:9=templates
-                useDataStore:1
-                useJSP:0
+                useDataStore:t
+                useJSP:f
             }
             servlet-class:24=org.cofax.cds.CDSServlet
             servlet-name:8=cofaxCDS
