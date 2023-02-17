@@ -48,15 +48,15 @@ useJSON:f
             "adminName": "admin",
             "balance": 10.4,
             "folder": "main",
-            "number": 2,
+            "number": 2
         },
         {
             "adminGroupID": 4,
             "adminName": "",
             "balance": -2.3,
             "folder": "other",
-            "number": 5,
-        },
+            "number": 5
+        }
     ],
     "cacheFolder": null,
     "isGood": true,
