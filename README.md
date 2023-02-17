@@ -73,11 +73,13 @@ useJSON:f
 ```
 1{{1:1 2:5=admin 3:10.4 4:4=main 5:2} {1:4 2:0= 3:-2.3 4:5=other 5:5}} 2:n 3:t 4{1:9=/static/* 2:8=/tools/*} 5:f
 ```
+112 characters (bytes)
 
 #### JSON
 ```
 {"1": [{"1": 1, "2": "admin", "3": 10.4, "4": "main", "5": 2}, {"1": 4, "2": "", "3": -2.3, "4": "other", "5": 5}], "2": null, "3": true, "4": {"1": "/static/*", "2": "/tools/*"}, "5": false}
 ```
+191 characters (bytes)
 
 
 ## Format specification
