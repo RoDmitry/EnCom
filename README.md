@@ -14,103 +14,71 @@ To make it even more compact, I encourage you to use keys as short as possible, 
 ## Examples
 ### EnCom
 ```
-web-app{
-    servlet{
-        {
-            init-param{
-                adminGroupID:4
-                betaServer:t
-                dataLog:1
-                dataLogMaxSize:0=
-                fileTransferFolder:18=fileTransferFolder
-                log:1
-            }
-            servlet-name:10=cofaxTools
-        }
-        {
-            init-param{
-                cacheTemplatesStore:n
-                cacheTemplatesTrack:100
-                configGlossary-poweredBy:5=Cofax
-                dataStoreMaxConns:100
-                dataStoreName:5=cofax
-                maxUrlLength:500
-                templateOverridePath:0=
-                templatePath:9=templates
-                useDataStore:t
-                useJSP:f
-            }
-            servlet-class:24=org.cofax.cds.CDSServlet
-            servlet-name:8=cofaxCDS
-        }
-        {
-            init-param{
-                mailHost:5=mail1
-                mailHostOverride:5=mail2
-            }
-            servlet-name:10=cofaxEmail
-        }
+admins{
+    {
+        adminGroupID:1
+        adminName:5=admin
+        balance:10.4
+        folder:4=main
+        number:2
     }
-    servlet-mapping{
-        cofaxTools:8=/tools/*
-        fileServlet:9=/static/*
-    }
-    taglib{
-        taglib-location:23=/WEB-INF/tlds/cofax.tld
+    {
+        adminGroupID:4
+        adminName:0=
+        balance:-2.3
+        folder:5=other
+        number:5
     }
 }
+cacheFolder:n
+isGood:t
+mapping{
+    files:9=/static/*
+    tools:8=/tools/*
+}
+useJSON:f
 ```
 
 ### JSON
 ```
 {
-    "web-app": {
-        "servlet": [
-            {
-                "init-param": {
-                    "adminGroupID": 4,
-                    "betaServer": true,
-                    "dataLog": 1,
-                    "dataLogMaxSize": "",
-                    "fileTransferFolder": "fileTransferFolder",
-                    "log": 1
-                },
-                "servlet-name": "cofaxTools"
-            },
-            {
-                "init-param": {
-                    "cacheTemplatesStore": null,
-                    "cacheTemplatesTrack": 100,
-                    "configGlossary-poweredBy": "Cofax",
-                    "dataStoreMaxConns": 100,
-                    "dataStoreName": "cofax",
-                    "maxUrlLength": 500,
-                    "templateOverridePath": "",
-                    "templatePath": "templates",
-                    "useDataStore": true,
-                    "useJSP": false
-                },
-                "servlet-class": "org.cofax.cds.CDSServlet",
-                "servlet-name": "cofaxCDS"
-            },
-            {
-                "init-param": {
-                    "mailHost": "mail1",
-                    "mailHostOverride": "mail2"
-                },
-                "servlet-name": "cofaxEmail"
-            },
-        ],
-        "servlet-mapping": {
-            "cofaxTools": "/tools/*",
-            "fileServlet": "/static/*"
+    "admins": [
+        {
+            "adminGroupID": 1,
+            "adminName": "admin",
+            "balance": 10.4,
+            "folder": "main",
+            "number": 2,
         },
-        "taglib": {
-            "taglib-location": "/WEB-INF/tlds/cofax.tld"
-        }
-    }
+        {
+            "adminGroupID": 4,
+            "adminName": "",
+            "balance": -2.3,
+            "folder": "other",
+            "number": 5,
+        },
+    ],
+    "cacheFolder": null,
+    "isGood": true,
+    "mapping": {
+        "tools": "/tools/*",
+        "files": "/static/*"
+    },
+    "useJSON": false
 }
 ```
+
+### Compact
+#### EnCom
+```
+1{{1:1 2:5=admin 3:10.4 4:4=main 5:2} {1:4 2:0= 3:-2.3 4:5=other 5:5}} 2:n 3:t 4{1:8=/tools/* 2:9=/static/*} 5:f
+```
+
+#### JSON
+```
+{"1": [{"1": 1, "2": "admin", "3": 10.4, "4": "main", "5": 2}, {"1": 4, "2": "", "3": -2.3, "4": "other", "5": 5}], "2": null, "3": true, "4": {"1": "/tools/*", "2": "/static/*"}, "5": false}
+```
+
 
 ## Format specification
 Separator - b' ', b'\n', b'\t', b'\r' (or actually it might be any character <= b' ', or less then 0x21)
