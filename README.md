@@ -61,8 +61,8 @@ useJSON:f
     "cacheFolder": null,
     "isGood": true,
     "mapping": {
-        "tools": "/tools/*",
-        "files": "/static/*"
+        "files": "/static/*",
+        "tools": "/tools/*"
     },
     "useJSON": false
 }
