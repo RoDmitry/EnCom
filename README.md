@@ -1,7 +1,7 @@
 # EnCom serialization format
 ## Made to replace old and loved JSON
 
-Encoding Compact, Encoded for Communication
+*Encoding Compact, Encoded for Communication*
 
 The main goal was to remove extra characters, allow binary data, and speed up parsing of strings.
 
