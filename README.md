@@ -93,6 +93,6 @@ If you have an Array of Enums, then Enums inside don't have `{` and `}`
 
 Space after `}` is not necessary
 
-Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for bytes
+Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary
 
 To validate the size of string or bytes, you check for the following symbols after it: b'}', b' ', b'\n', b'\t', b'\r' or EOF
