@@ -7,7 +7,7 @@ The main goal was to remove extra characters, allow binary data, and speed up pa
 
 There is no need to escape characters in strings. And it's capable to work with binary data as is.
 
-Zero-copy for strings and bytes.
+Zero-copy for strings and binary bytes.
 
 ## Examples
 ### EnCom
