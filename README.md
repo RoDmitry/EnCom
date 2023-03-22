@@ -95,4 +95,4 @@ Space after `}` is not necessary
 
 Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary
 
-To validate the size of string or bytes, you check for the following symbols after it: b'}', b' ', b'\n', b'\t', b'\r' or EOF
+To validate the size of a string or bytes, you check for the following symbols after it: b'}', b' ', b'\n', b'\t', b'\r' or EOF
