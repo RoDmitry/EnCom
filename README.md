@@ -83,7 +83,7 @@ In this example, to make it even more compact, I've used short (one char long) k
 
 
 ## Format specification
-Separator - b' ', b'\n', b'\t', b'\r' (or actually it might be any character <= b' ', or less then 0x21)
+Separators: ' ', '\n', '\t', '\r' (or actually it might be any character <= ' ', or less then 0x21)
 
 Structure and array open with `{` and close with `}`
 
@@ -95,4 +95,4 @@ Space after `}` is not necessary
 
 Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary
 
-To validate the size of a string or bytes, you check for the following symbols after it: b'}', b' ', b'\n', b'\t', b'\r' or EOF
+To validate the size of a string or bytes, you check for the following symbols after it: '}', ' ', '\n', '\t', '\r' or EOF
