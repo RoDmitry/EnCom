@@ -77,9 +77,9 @@ In this example, to make it even more compact, I've used short (one char long) k
 
 #### JSON
 ```
-{"1": [{"1": 1, "2": "admin", "3": 10.4, "4": "main", "5": 2}, {"1": 4, "2": "", "3": -2.3, "4": "other", "5": 5}], "2": null, "3": true, "4": {"1": "/static/*", "2": "/tools/*"}, "5": false}
+{"1":[{"1":1,"2":"admin","3":10.4,"4":"main","5":2},{"1":4,"2":"","3":-2.3,"4":"other","5":5}],"2":null,"3":true,"4":{"1":"/static/*","2":"/tools/*"},"5":false}
 ```
-191 characters (bytes)
+160 characters (bytes)
 
 
 ## Format specification
