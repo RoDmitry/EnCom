@@ -7,6 +7,8 @@ The main goal was to remove extra characters, allow binary data, and speed up pa
 
 There is no need to escape characters in strings. And it's capable to work with binary data as is.
 
+The design downside is that it's not allowed to have keys with `:` or separator chars (any character <= ' '), where Json allows any string.
+
 Zero-copy for strings and binary bytes.
 
 ## Examples
