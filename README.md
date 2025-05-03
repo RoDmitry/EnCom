@@ -1,5 +1,4 @@
-# EnCom serialization format
-## Made to replace old and loved JSON
+# EnCom - compact human-readable serialization format
 
 *Encoding Compact, Encoded for Communication*
 
