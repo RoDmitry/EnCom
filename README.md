@@ -94,7 +94,7 @@ First structure/array don't have them, and if you didn't specify the structure (
 
 If you have an Array of Enums, then Enums inside don't have `{` and `}`.
 
-Space after `}` is not necessary.
+Space after `}` or `]` is not necessary.
 
 Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary.
 
