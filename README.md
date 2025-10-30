@@ -13,7 +13,7 @@ Zero-copy for strings and binary bytes.
 ## Examples
 ### EnCom
 ```
-admins{
+admins[
     {
         adminGroupID:1
         adminName:5=admin
@@ -28,7 +28,7 @@ admins{
         folder:5=other
         number:5
     }
-}
+]
 cacheFolder:n
 isGood:t
 mapping{
@@ -72,9 +72,9 @@ In this example, to make it even more compact, I've used short (one char long) k
 
 #### EnCom
 ```
-1{{1:1 2:5=admin 3:10.4 4:4=main 5:2} {1:4 2:0= 3:-2.3 4:5=other 5:5}} 2:n 3:t 4{1:9=/static/* 2:8=/tools/*} 5:f
+1[{1:1 2:5=admin 3:10.4 4:4=main 5:2}{1:4 2:0= 3:-2.3 4:5=other 5:5}] 2:n 3:t 4{1:9=/static/* 2:8=/tools/*} 5:f
 ```
-112 characters (bytes)
+111 characters (bytes)
 
 #### JSON
 ```
@@ -84,16 +84,18 @@ In this example, to make it even more compact, I've used short (one char long) k
 
 
 ## Format specification
-Separators: ' ', '\n', '\t', '\r' (or actually it might be any character <= ' ', or less then 0x21)
+Separators: ' ', '\n', '\t', '\r' (or actually it might be any character <= ' ', or less then 0x21).
 
-Structure and array open with `{` and close with `}`
+Structure open with `{` and close with `}`.
 
-First structure/array don't have them, and if you didn't specify the structure (the layout), and it's not a map (structure), then it will always be an array
+Array open with `[` and close with `]`.
 
-If you have an Array of Enums, then Enums inside don't have `{` and `}`
+First structure/array don't have them, and if you didn't specify the structure (the layout), and it's not a map (structure), then it will always be an array.
 
-Space after `}` is not necessary
+If you have an Array of Enums, then Enums inside don't have `{` and `}`.
 
-Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary
+Space after `}` is not necessary.
 
-To validate the size of a string or bytes, you check for the following symbols after it: '}', ' ', '\n', '\t', '\r' or EOF
+Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary.
+
+To validate the size of a string or bytes, you check for the following symbols after it: '}', ' ', '\n', '\t', '\r' or EOF.
