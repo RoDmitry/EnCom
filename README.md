@@ -10,6 +10,23 @@ The design downside is that it's not allowed to have keys with `:` or separator 
 
 Zero-copy for strings and binary bytes.
 
+## Format specification
+Separators: ' ', '\n', '\t', '\r' (or actually it might be any character <= ' ', or less then 0x21).
+
+Structure open with `{` and close with `}`.
+
+Array open with `[` and close with `]`.
+
+First structure/array don't have them, and if you didn't specify the structure (the layout), and it's not a map (structure), then it will always be an array.
+
+If you have an Array of Enums, then Enums inside don't have `{` and `}`.
+
+Space after `}` or `]` is not necessary.
+
+Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary.
+
+To validate the size of a string or bytes, you check for the following symbols after it: '}', ']', ' ', '\n', '\t', '\r' or EOF.
+
 ## Examples
 ### EnCom
 ```
@@ -81,21 +98,3 @@ In this example, to make it even more compact, I've used short (one char long) k
 {"1":[{"1":1,"2":"admin","3":10.4,"4":"main","5":2},{"1":4,"2":"","3":-2.3,"4":"other","5":5}],"2":null,"3":true,"4":{"1":"/static/*","2":"/tools/*"},"5":false}
 ```
 160 characters (bytes)
-
-
-## Format specification
-Separators: ' ', '\n', '\t', '\r' (or actually it might be any character <= ' ', or less then 0x21).
-
-Structure open with `{` and close with `}`.
-
-Array open with `[` and close with `]`.
-
-First structure/array don't have them, and if you didn't specify the structure (the layout), and it's not a map (structure), then it will always be an array.
-
-If you have an Array of Enums, then Enums inside don't have `{` and `}`.
-
-Space after `}` or `]` is not necessary.
-
-Strings and binary data have length stated (in bytes), like `8=sometext` for strings and `8~somedata` for binary.
-
-To validate the size of a string or bytes, you check for the following symbols after it: '}', ']', ' ', '\n', '\t', '\r' or EOF.
